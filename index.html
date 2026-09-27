@@ -90,6 +90,13 @@ a{color:var(--info);text-decoration:none}
   display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--t2);
   border:1px solid var(--line2);border-radius:999px;padding:5px 11px;background:rgba(15,24,35,.7)}
 .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--brand);box-shadow:0 0 8px var(--brand)}
+.pill-copy{cursor:pointer;user-select:none;-webkit-user-select:none;transition:background .15s ease,border-color .15s ease,color .15s ease}
+.pill-copy:hover{background:#13203a;border-color:#32436a}
+.pill-copy:active{transform:translateY(1px)}
+.pill-copy:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.pill-copy.copied{background:rgba(49,230,160,.18);border-color:#2bd08a;color:#9affd0}
+.ic-qq{display:inline-flex;align-items:center;line-height:0}
+.ic-qq svg{width:14px;height:14px;display:block}
 
 .appbar{position:sticky;top:0;z-index:70;margin-top:18px}
 .appbar-in{
@@ -1147,6 +1154,9 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
       <div class="hero-meta">
         <span class="pill"><i class="dot"></i>本机存储</span>
         <span class="pill" id="pillEngine">系统 v7.7</span>
+        <span class="pill pill-copy" id="pillContact" data-copy="2488181261" role="button" tabindex="0" title="点击复制 QQ 号">
+          <i class="ic-qq"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#12B7F5" d="M12 2.2c-2.1 0-3.7 1.5-3.7 3.7 0 .9.3 1.6.8 2.2C7.2 9.2 6 11 6 13.2c0 3.2 2.7 5.8 6 5.8s6-2.6 6-5.8c0-2.2-1.2-4-2.1-5.1.5-.6.8-1.3.8-2.2 0-2.2-1.6-3.7-3.7-3.7z"/><ellipse cx="12" cy="13.4" rx="3.5" ry="4" fill="#fff"/><circle cx="10.1" cy="9.2" r="1" fill="#fff"/><circle cx="13.9" cy="9.2" r="1" fill="#fff"/><circle cx="10.3" cy="9.3" r=".45" fill="#15324a"/><circle cx="14.1" cy="9.3" r=".45" fill="#15324a"/><path fill="#ff9c2c" d="M11 10.2h2l-1 .8z"/><path fill="#ff5a5a" d="M7 11.6c1.7 1 3.7 1.5 5 1.5s3.3-.5 5-1.5c-.4 1.2-2.2 2-5 2s-4.6-.8-5-2z"/></svg></i><span class="pill-txt">联系 QQ：2488181261</span>
+        </span>
       </div>
     </div>
     <div class="disclaimer">
@@ -7283,6 +7293,45 @@ var SimView = (function(){
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
+})();
+</script>
+<script>
+/* 首页 QQ 徽章：点击复制号码到剪贴板（含非安全上下文回退） */
+(function(){
+  var el = document.getElementById('pillContact');
+  if (!el) return;
+  var num = el.getAttribute('data-copy') || '';
+  var txt = el.querySelector('.pill-txt');
+  var baseTxt = txt ? txt.textContent : '';
+  var svgHTML = '<i class="ic-qq"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#12B7F5" d="M12 2.2c-2.1 0-3.7 1.5-3.7 3.7 0 .9.3 1.6.8 2.2C7.2 9.2 6 11 6 13.2c0 3.2 2.7 5.8 6 5.8s6-2.6 6-5.8c0-2.2-1.2-4-2.1-5.1.5-.6.8-1.3.8-2.2 0-2.2-1.6-3.7-3.7-3.7z"/><ellipse cx="12" cy="13.4" rx="3.5" ry="4" fill="#fff"/><circle cx="10.1" cy="9.2" r="1" fill="#fff"/><circle cx="13.9" cy="9.2" r="1" fill="#fff"/><circle cx="10.3" cy="9.3" r=".45" fill="#15324a"/><circle cx="14.1" cy="9.3" r=".45" fill="#15324a"/><path fill="#ff9c2c" d="M11 10.2h2l-1 .8z"/><path fill="#ff5a5a" d="M7 11.6c1.7 1 3.7 1.5 5 1.5s3.3-.5 5-1.5c-.4 1.2-2.2 2-5 2s-4.6-.8-5-2z"/></svg></i>';
+  var t = null;
+  function flash(){
+    if (txt){ txt.textContent = '已复制 QQ ✓'; }
+    el.classList.add('copied'); el.setAttribute('title','已复制：' + num);
+    if (t) clearTimeout(t);
+    t = setTimeout(function(){
+      if (txt){ txt.textContent = baseTxt; }
+      el.classList.remove('copied'); el.setAttribute('title','点击复制 QQ 号');
+    }, 1300);
+  }
+  function fallback(){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = num; ta.style.position = 'fixed'; ta.style.top = '-9999px'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      var ok = document.execCommand('copy'); document.body.removeChild(ta);
+      if (ok) flash();
+    }catch(e){}
+  }
+  function copy(){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(num).then(flash).catch(fallback);
+    } else { fallback(); }
+  }
+  el.addEventListener('click', copy);
+  el.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){ e.preventDefault(); copy(); }
+  });
 })();
 </script>
 </body>
