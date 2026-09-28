@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#05080e">
-<title>三角洲行动 · 黑屋匹配推测系统 v7.7</title>
+<title>三角洲行动 · 黑屋匹配推测系统 v8.4</title>
+<link rel="preconnect" href="https://moligod.com">
+<link rel="dns-prefetch" href="https://moligod.com">
 <style>
 /* ============================================================
    1. 设计令牌
@@ -1137,6 +1139,37 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
 .path-row .pr-count{margin-left:auto;font-size:.72rem;color:var(--brand,#31e6a0);background:rgba(49,230,160,.1);padding:2px 9px;border-radius:20px}
 .path-note{font-size:.74rem;color:var(--warn);margin-top:8px;line-height:1.6}
 
+/* ====================== v8.4 视觉增强 ====================== */
+.hero-top{gap:14px}
+.hero h1 .tag{box-shadow:0 0 18px rgba(49,230,160,.45),0 2px 10px rgba(0,0,0,.4)}
+.hero .sub{max-width:660px}
+.appbar-in{background:rgba(8,13,20,.82);border:1px solid var(--line);box-shadow:0 10px 34px -16px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.04)}
+.tab-btn:hover{color:var(--t2);background:rgba(255,255,255,.04)}
+.tab-btn.on{
+  font-weight:700;
+  color:var(--t1);
+  background:linear-gradient(180deg,rgba(49,230,160,.11),rgba(49,230,160,.03));
+  border:1px solid rgba(49,230,160,.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 6px 18px -12px rgba(49,230,160,.32)}
+.tab-btn.on::after{
+  content:"";position:absolute;left:20%;right:20%;bottom:6px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--brand),transparent);opacity:.85}
+.tab-btn.on .cnt{background:rgba(49,230,160,.16);color:var(--brand)}
+.card{
+  background:linear-gradient(160deg,rgba(20,32,46,.7),rgba(11,18,28,.88));
+  border:1px solid var(--line2);
+  transition:transform .22s var(--ease),border-color .22s var(--ease),box-shadow .22s var(--ease)}
+.card:hover{transform:translateY(-2px);border-color:rgba(49,230,160,.28);box-shadow:0 18px 52px -22px rgba(0,0,0,.85),0 0 0 1px rgba(49,230,160,.12)}
+.card::after{background:linear-gradient(90deg,var(--brand),var(--info),transparent);opacity:.9;box-shadow:0 0 12px rgba(49,230,160,.35)}
+.card-hd .ic{box-shadow:0 0 14px -4px rgba(49,230,160,.55)}
+.mech-hint-card{
+  background:linear-gradient(160deg,rgba(20,32,46,.7),rgba(11,18,28,.88));
+  border:1px solid var(--line2);
+  transition:transform .22s var(--ease),border-color .22s var(--ease)}
+.mech-hint-card:hover{transform:translateY(-2px);border-color:rgba(49,230,160,.28)}
+.mech-hint-card.feat{background:linear-gradient(160deg,rgba(18,30,44,.86),rgba(10,17,26,.94));border:1px solid rgba(49,230,160,.22);box-shadow:0 12px 44px -22px rgba(49,230,160,.5)}
+.mech-hint-card.feat h3{background:linear-gradient(120deg,var(--t1),var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent}
+
 </style>
 </head>
 <body>
@@ -1146,14 +1179,14 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
   <div class="hero">
     <div class="hero-top">
       <div>
-        <h1>三角洲行动 · 黑屋匹配推测系统 <span class="tag">v7.7</span></h1>
+        <h1>三角洲行动 · 黑屋匹配推测系统 <span class="tag">v8.4</span></h1>
         <div class="sub">
           S11「群星」校准 ｜ <b>两轴分离模型 v4.3（阈值按 2026-09 社区拆解口径重标）</b> ｜ 三模式定向拆解 · 单因子归因 · 解锁目标反解 · 历史趋势分析 ｜ 完全离线运行
         </div>
       </div>
       <div class="hero-meta">
         <span class="pill"><i class="dot"></i>本机存储</span>
-        <span class="pill" id="pillEngine">系统 v7.7</span>
+        <span class="pill" id="pillEngine">系统 v8.4</span>
         <span class="pill pill-copy" id="pillContact" data-copy="2488181261" role="button" tabindex="0" title="点击复制 QQ 号">
           <i class="ic-qq"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#12B7F5" d="M12 2.2c-2.1 0-3.7 1.5-3.7 3.7 0 .9.3 1.6.8 2.2C7.2 9.2 6 11 6 13.2c0 3.2 2.7 5.8 6 5.8s6-2.6 6-5.8c0-2.2-1.2-4-2.1-5.1.5-.6.8-1.3.8-2.2 0-2.2-1.6-3.7-3.7-3.7z"/><ellipse cx="12" cy="13.4" rx="3.5" ry="4" fill="#fff"/><circle cx="10.1" cy="9.2" r="1" fill="#fff"/><circle cx="13.9" cy="9.2" r="1" fill="#fff"/><circle cx="10.3" cy="9.3" r=".45" fill="#15324a"/><circle cx="14.1" cy="9.3" r=".45" fill="#15324a"/><path fill="#ff9c2c" d="M11 10.2h2l-1 .8z"/><path fill="#ff5a5a" d="M7 11.6c1.7 1 3.7 1.5 5 1.5s3.3-.5 5-1.5c-.4 1.2-2.2 2-5 2s-4.6-.8-5-2z"/></svg></i><span class="pill-txt">联系 QQ：2488181261</span>
         </span>
@@ -1201,12 +1234,33 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
         </button>
         <button class="tab-btn" type="button" role="tab" data-view="roomcard" aria-selected="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M10.85 12.15 19 4M18 5l3 3M15 8l2 2"/></svg>
-          房卡
+          露天房卡
         </button>
 
-        <button class="tab-btn" type="button" role="tab" data-view="mech" aria-selected="false">
+        <button class="tab-btn" type="button" role="tab" data-view="trade" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 3 5-7"/><circle cx="17" cy="6" r="1.6"/></svg>
+          交易行
+        </button>
+
+        <button class="tab-btn" type="button" role="tab" data-view="daily" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          每日密码
+        </button>
+                <button class="tab-btn" type="button" role="tab" data-view="ammo" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          子弹实时行情
+        </button>
+        <button class="tab-btn" type="button" role="tab" data-view="fish" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16c0-4.4 3.6-9 8-9s8 4.6 8 9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><path d="M10 7V5a2 2 0 0 1 4 0v2"/><path d="M2 16h4"/></svg>
+          鱼类图鉴
+        </button>
+        <button class="tab-btn" type="button" role="tab" data-view="gear" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/><path d="M12 8v8M8 12h8"/></svg>
+          卡战备套装
+        </button>
+<button class="tab-btn" type="button" role="tab" data-view="mech" aria-selected="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
-          机制与来源
+          机制与提示
         </button>
       </div>
     </div>
@@ -1224,7 +1278,7 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
 
     <div class="notice warn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-      本工具为<b>玩家社区推测性质</b>：阈值取自百科词条「黑屋号」、社区拆解整理与多位实测 UP 主的公开统计（见「机制与来源」），不代表琳琅天上/腾讯官方判定。厂商未公开完整匹配与爆率算法，参数可能随版本调整。S11「群星」已于 2026-09-04（国际服 09-08）上线；<b>“隐藏分重置为上赛季 60%”“前五局承担 70% 校准”等说法未找到官方出处，本工具仅作为可调模型参数处理</b>。
+      本工具为<b>玩家社区推测性质</b>：阈值取自百科词条「黑屋号」、社区拆解整理与多位实测 UP 主的公开统计（见「机制与提示」），不代表琳琅天上/腾讯官方判定。厂商未公开完整匹配与爆率算法，参数可能随版本调整。S11「群星」已于 2026-09-04（国际服 09-08）上线；<b>“隐藏分重置为上赛季 60%”“前五局承担 70% 校准”等说法未找到官方出处，本工具仅作为可调模型参数处理</b>。
     </div>
 
     <!-- 录入 -->
@@ -1278,22 +1332,22 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
         <div class="grid g4">
           <div class="field">
             <label for="profitRatio">赚损比（M）</label>
-            <input class="ctrl" type="number" id="profitRatio" step="0.01" inputmode="decimal" placeholder="如 1.00">
+            <input class="ctrl" type="number" id="profitRatio" step="0.01" inputmode="decimal" placeholder="">
             <span class="hint">总带出 ÷ 撤离失败场次；绝密标准线 1.00M</span>
           </div>
           <div class="field">
             <label for="extractValue">带出价值（M）</label>
-            <input class="ctrl" type="number" id="extractValue" step="0.1" inputmode="decimal" placeholder="如 350.5">
+            <input class="ctrl" type="number" id="extractValue" step="0.1" inputmode="decimal" placeholder="">
             <span class="hint">本赛季累计，百万哈夫币</span>
           </div>
           <div class="field">
             <label for="totalReward">累计行动报酬（M）</label>
-            <input class="ctrl" type="number" id="totalReward" step="0.1" inputmode="decimal" placeholder="如 120.0">
+            <input class="ctrl" type="number" id="totalReward" step="0.1" inputmode="decimal" placeholder="">
             <span class="hint">用于校验带出口径是否自洽</span>
           </div>
           <div class="field">
             <label for="playTime">游戏时长（分钟）</label>
-            <input class="ctrl" type="number" id="playTime" step="1" inputmode="numeric" placeholder="如 4200">
+            <input class="ctrl" type="number" id="playTime" step="1" inputmode="numeric" placeholder="">
             <span class="hint">推算每局时长与收益效率 M/h</span>
           </div>
         </div>
@@ -1304,23 +1358,23 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
         <div class="grid g4">
           <div class="field">
             <label for="kdSecret">机密战损比</label>
-            <input class="ctrl" type="number" id="kdSecret" step="0.01" inputmode="decimal" placeholder="如 1.20">
+            <input class="ctrl" type="number" id="kdSecret" step="0.01" inputmode="decimal" placeholder="">
             <span class="hint">KD 分模式独立计算，互不干扰</span>
           </div>
           <div class="field">
             <label for="kdTopSecret">绝密战损比</label>
-            <input class="ctrl" type="number" id="kdTopSecret" step="0.01" inputmode="decimal" placeholder="如 0.95">
+            <input class="ctrl" type="number" id="kdTopSecret" step="0.01" inputmode="decimal" placeholder="">
             <span class="hint">绝密 KD 最有说服力，2.3+ 为高手</span>
           </div>
           <div class="field">
             <label for="hitRate">命中率</label>
-            <input class="ctrl has-suffix" type="number" id="hitRate" step="0.1" inputmode="decimal" placeholder="如 28.5">
+            <input class="ctrl has-suffix" type="number" id="hitRate" step="0.1" inputmode="decimal" placeholder="">
             <span class="unit-suffix">%</span>
             <span class="hint">25%+ 具高手枪法基础，&lt;20% 反触发异常</span>
           </div>
           <div class="field">
             <label for="precisionRate">精准击败率</label>
-            <input class="ctrl has-suffix" type="number" id="precisionRate" step="0.1" inputmode="decimal" placeholder="如 35.0">
+            <input class="ctrl has-suffix" type="number" id="precisionRate" step="0.1" inputmode="decimal" placeholder="">
             <span class="unit-suffix">%</span>
             <span class="hint">含近战/AI 命中，超 60% 易被判行为异常</span>
           </div>
@@ -1332,24 +1386,24 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
         <div class="grid g4">
           <div class="field">
             <label for="evacRate">撤离率</label>
-            <input class="ctrl has-suffix" type="number" id="evacRate" step="0.1" inputmode="decimal" placeholder="如 32.0">
+            <input class="ctrl has-suffix" type="number" id="evacRate" step="0.1" inputmode="decimal" placeholder="">
             <span class="unit-suffix">%</span>
             <span class="hint">均衡最优 20%–35%，&gt;35% 触发锁爆率</span>
           </div>
           <div class="field">
             <label for="gearValue">平均单局入场战备</label>
-            <input class="ctrl has-suffix" type="number" id="gearValue" step="1" inputmode="decimal" placeholder="如 19">
+            <input class="ctrl has-suffix" type="number" id="gearValue" step="1" inputmode="decimal" placeholder="">
             <span class="unit-suffix">万</span>
             <span class="hint">战备装备分＝分房第一筛选门槛</span>
           </div>
           <div class="field">
             <label for="teammateValue">带出队友价值（M）</label>
-            <input class="ctrl" type="number" id="teammateValue" step="0.1" inputmode="decimal" placeholder="如 15.0">
+            <input class="ctrl" type="number" id="teammateValue" step="0.1" inputmode="decimal" placeholder="">
             <span class="hint">合作分依据，单排不计分</span>
           </div>
           <div class="field">
             <label for="rescueCount">救助队友（次）</label>
-            <input class="ctrl" type="number" id="rescueCount" step="1" inputmode="numeric" placeholder="如 85">
+            <input class="ctrl" type="number" id="rescueCount" step="1" inputmode="numeric" placeholder="">
             <span class="hint">折算救助次数 / 战局数</span>
           </div>
         </div>
@@ -1360,7 +1414,7 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
         <div class="grid g3">
           <div class="field">
             <label for="totalGames">战局数 <span class="req">*</span></label>
-            <input class="ctrl" type="number" id="totalGames" step="1" inputmode="numeric" placeholder="如 280">
+            <input class="ctrl" type="number" id="totalGames" step="1" inputmode="numeric" placeholder="">
             <span class="hint">面板场次 ≥100 数据才可信；样本不足时阈值自动收紧，避免误判</span>
           </div>
           <div class="field">
@@ -1666,8 +1720,385 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
     </div>
   </section>
 
-  <!-- ============ 机制与来源 ============ -->
-  <section class="view" id="view-mech" role="tabpanel">
+  <!-- ============ 机制与提示 ============ -->
+  <!-- ============ 交易行 · 实时挂载 ============ -->
+    <!-- ============ 交易行 ============ -->
+  <section class="view" id="view-trade" role="tabpanel">
+    <style>
+      .mount-card{position:relative;background:linear-gradient(165deg,rgba(20,32,46,.92),rgba(11,18,28,.94));border:1px solid var(--line2);border-radius:var(--r-xl);padding:16px;box-shadow:var(--sh-2);overflow:hidden}
+      .mount-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--brand),var(--info),transparent);opacity:.75}
+      .mount-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+      .mount-title{display:flex;align-items:center;gap:9px;font-size:1.06rem;font-weight:800;background:linear-gradient(120deg,var(--t1),var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent}
+      .mount-title svg{width:20px;height:20px;color:var(--brand);flex-shrink:0;filter:drop-shadow(0 0 6px rgba(49,230,160,.55))}
+      .mount-ctrl{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+      .mount-btn{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:600;color:var(--t2);border:1px solid var(--line2);border-radius:999px;padding:5px 11px;background:rgba(15,24,35,.6);backdrop-filter:blur(6px);transition:.18s var(--ease);cursor:pointer}
+      .mount-btn:hover{background:rgba(49,230,160,.12);border-color:var(--brand-line);color:var(--brand);transform:translateY(-1px);box-shadow:0 4px 14px -6px rgba(49,230,160,.5)}
+      .mount-btn svg{width:12px;height:12px}
+      .mount-zoom{font-size:.72rem;color:var(--t1);width:54px;text-align:center;font-family:var(--mono);background:rgba(0,0,0,.28);border:1px solid var(--line2);border-radius:999px;padding:3px 6px;outline:none;transition:border-color .15s}
+      .mount-zoom::-webkit-outer-spin-button,.mount-zoom::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+      .mount-zoom:focus{border-color:var(--brand-line);box-shadow:0 0 0 3px rgba(49,230,160,.12)}
+      .mount-zoom-pct{font-size:.7rem;color:var(--t3);margin-left:2px}
+      .mount-crop{width:100%;max-width:100%;overflow:auto;background:#0b1220;border:1px solid var(--line2);border-radius:var(--r-l);box-shadow:inset 0 0 0 1px rgba(49,230,160,.05),var(--sh-2)}
+      .mount-clip{position:relative;background:#0b1220;transform-origin:top left;transform:scale(var(--mv-scale,1));}
+      .mount-clip iframe{position:absolute;left:0;top:0;width:1440px;height:1200px;border:0;display:block;background:#0b1220}
+      @media(max-width:560px){.mount-head{flex-direction:column;align-items:flex-start}}
+    </style>
+
+    <div class="mount-card">
+      <div class="mount-head">
+        <div class="mount-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 3 5-7"/><circle cx="17" cy="6" r="1.6"/></svg>
+          交易行
+        </div>
+        <div class="mount-ctrl">
+          <button class="mount-btn" type="button" data-act="zoomout">-</button>
+          <input class="mount-zoom mount-zoom-input" id="tvZoom" type="number" value="100" min="20" max="300" step="5" inputmode="numeric"><span class="mount-zoom-pct">%</span>
+          <button class="mount-btn" type="button" data-act="zoomin">+</button>
+          <button class="mount-btn" type="button" data-act="fit">适应宽度</button>
+          <button class="mount-btn" type="button" data-act="refresh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            刷新同步
+          </button>
+        </div>
+      </div>
+      <div class="mount-crop" id="tvCrop">
+        <div class="mount-clip" id="tvClip">
+          <iframe id="tvFrame" title="moligod 交易行实时挂载" referrerpolicy="no-referrer" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        window.initMount = function(viewId, frameId, clipId, cropId, cfg){
+          var view = document.getElementById(viewId);
+          var frame = document.getElementById(frameId);
+          var clip = document.getElementById(clipId);
+          var crop = document.getElementById(cropId);
+          var zoomLabel = view.querySelector('.mount-zoom');
+          var fullBtn = view.querySelector('[data-act="full"]');
+          var scale = 1, minScale = 0.2, maxScale = 3;
+          var full = cfg.defaultFull ? true : false;
+          var baseW = full ? 1440 : cfg.crop.w, baseH = full ? 1200 : cfg.crop.h, offX = full ? 0 : cfg.crop.x, offY = full ? 0 : cfg.crop.y;
+          function apply(){
+            clip.style.width = baseW + 'px';
+            clip.style.height = baseH + 'px';
+            clip.style.setProperty('--mv-scale', scale.toFixed(4));
+            frame.style.left = (-offX) + 'px';
+            frame.style.top = (-offY) + 'px';
+            if(zoomLabel && document.activeElement !== zoomLabel) zoomLabel.value = Math.round(scale*100);
+            if(fullBtn) fullBtn.querySelector('span').textContent = full ? '裁剪视图' : '完整页面';
+          }
+          function fitWidth(){
+            var w = crop.clientWidth;
+            scale = Math.max(minScale, Math.min(maxScale, w / baseW));
+            apply();
+          }
+          function reload(){ frame.src = cfg.src + (cfg.src.indexOf('?')>-1 ? '&' : '?') + 't=' + Date.now(); }
+          var ctrl = view.querySelector('.mount-ctrl');
+          if(ctrl){
+            ctrl.addEventListener('click', function(e){
+              var btn = e.target.closest('[data-act]'); if(!btn) return;
+              var act = btn.getAttribute('data-act');
+              if(act === 'zoomin'){ scale = Math.min(maxScale, scale * 1.2); apply(); }
+              else if(act === 'zoomout'){ scale = Math.max(minScale, scale / 1.2); apply(); }
+              else if(act === 'fit'){ fitWidth(); }
+              else if(act === 'refresh'){ reload(); }
+              else if(act === 'full'){
+                full = !full;
+                baseW = full ? 1440 : cfg.crop.w;
+                baseH = full ? 1200 : cfg.crop.h;
+                offX = full ? 0 : cfg.crop.x;
+                offY = full ? 0 : cfg.crop.y;
+                fitWidth();
+              }
+            });
+          }
+          if(zoomLabel){
+            zoomLabel.addEventListener('input', function(){
+              var v = parseFloat(zoomLabel.value);
+              if(isNaN(v)) return;
+              scale = Math.max(minScale, Math.min(maxScale, v/100));
+              clip.style.width = baseW + 'px'; clip.style.height = baseH + 'px';
+              clip.style.setProperty('--mv-scale', scale.toFixed(4));
+              frame.style.left = (-offX) + 'px'; frame.style.top = (-offY) + 'px';
+            });
+            zoomLabel.addEventListener('change', function(){
+              var v = parseFloat(zoomLabel.value);
+              if(isNaN(v)) v = Math.round(scale*100);
+              v = Math.max(20, Math.min(300, v));
+              scale = Math.max(minScale, Math.min(maxScale, v/100));
+              apply();
+            });
+          }
+          var inited = false;
+          function init(){ if(inited) return; inited = true; fitWidth(); reload(); }
+          var mo = new MutationObserver(function(){ if(view.classList.contains('on')){ init(); } });
+          mo.observe(view, {attributes:true, attributeFilter:['class']});
+          if(view.classList.contains('on')) init();
+          window.addEventListener('resize', fitWidth);
+        };
+        window.initSimpleMount = function(viewId, frameId, clipId, cropId, src, cropW, cropH, offset){
+          var view = document.getElementById(viewId);
+          var frame = document.getElementById(frameId);
+          var clip = document.getElementById(clipId);
+          var crop = document.getElementById(cropId);
+          function apply(){
+            var w = crop.clientWidth;
+            var s = w >= cropW ? 1 : Math.max(0.3, w / cropW);
+            clip.style.width = cropW + 'px';
+            clip.style.height = cropH + 'px';
+            clip.style.setProperty('--mv-scale', s.toFixed(4));
+            frame.style.left = (-offset.x) + 'px';
+            frame.style.top = (-offset.y) + 'px';
+            crop.style.height = Math.round(cropH * s) + 'px';
+          }
+          function reload(){ frame.src = src + (src.indexOf('?')>-1 ? '&' : '?') + 't=' + Date.now(); }
+          var card = crop.closest('.dv-card') || view;
+          var refresh = card.querySelector('.dv-acts [data-act^="refresh"]');
+          if(refresh) refresh.addEventListener('click', reload);
+          var inited = false;
+          function init(){ if(inited) return; inited = true; apply(); reload(); }
+          var mo = new MutationObserver(function(){ if(view.classList.contains('on')){ apply(); init(); } });
+          mo.observe(view, {attributes:true, attributeFilter:['class']});
+          if(view.classList.contains('on')) init();
+          window.addEventListener('resize', apply);
+        };
+        initMount('view-trade','tvFrame','tvClip','tvCrop',{src:'https://moligod.com/trade',crop:{x:256,y:90,w:1184,h:810}});
+      })();
+    </script>
+  </section>
+
+<!-- ============ 每日密码 · 独立窗口挂载 ============ -->
+    <!-- ============ 每日密码 ============ -->
+  <section class="view" id="view-daily" role="tabpanel">
+    <style>
+      #view-daily .dv-card{background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:var(--r-l);padding:14px;box-shadow:var(--sh-2)}
+      #view-daily .dv-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+      #view-daily .dv-title{display:flex;align-items:center;gap:8px;font-size:1.05rem;font-weight:800;color:var(--t1)}
+      #view-daily .dv-title svg{width:20px;height:20px;color:var(--brand);flex-shrink:0}
+      #view-daily .dv-acts{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+      #view-daily .dv-btn{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:600;color:var(--t2);border:1px solid var(--line2);border-radius:999px;padding:5px 10px;background:rgba(15,24,35,.7);transition:.15s;cursor:pointer}
+      #view-daily .dv-btn:hover{background:#13203a;border-color:#32436a;color:var(--t1)}
+      #view-daily .dv-btn svg{width:12px;height:12px}
+      #view-daily .dv-crop{width:100%;max-width:100%;overflow:hidden;background:#0b1220;border:1px solid var(--line2);border-radius:var(--r-l);box-shadow:var(--sh-2)}
+      #view-daily .dv-clip{position:relative;background:#0b1220;transform-origin:top left;transform:scale(var(--mv-scale,1));overflow:hidden}
+      #view-daily .dv-clip iframe{position:absolute;left:-281px;top:-122px;width:1440px;height:1200px;border:0;display:block;background:#0b1220}
+      #view-daily .dv-sub2{font-size:.76rem;color:var(--t3);line-height:1.7;margin:10px 0 0}
+      @media(max-width:560px){#view-daily .dv-head{flex-direction:column;align-items:flex-start}}
+    </style>
+
+    <div class="dv-card">
+      <div class="dv-head">
+        <div class="dv-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          每日密码
+        </div>
+        <div class="dv-acts">
+          <button class="dv-btn" type="button" data-act="refresh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            刷新同步
+          </button>
+        </div>
+      </div>
+      <div class="dv-crop" id="dvCrop">
+        <div class="dv-clip" id="dvClip">
+          <iframe id="dvFrame" title="moligod 每日密码实时挂载" referrerpolicy="no-referrer" loading="eager"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card" style="margin-top:14px">
+      <div class="dv-head">
+        <div class="dv-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 3 9l4 4M15 3l6 6-4 4M3 21l6-6"/><circle cx="12" cy="12" r="3"/></svg>
+          每日密码位置图
+        </div>
+        <div class="dv-acts">
+          <button class="dv-btn" type="button" data-act="refresh2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            刷新同步
+          </button>
+        </div>
+      </div>
+      <div class="dv-crop" id="dvCrop2">
+        <div class="dv-clip" id="dvClip2">
+          <iframe id="dvFrame2" title="moligod 每日密码位置图实时挂载" referrerpolicy="no-referrer" loading="eager" style="left:-281px;top:-380px"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        initSimpleMount('view-daily','dvFrame','dvClip','dvCrop','https://moligod.com/secrets/',1124,258,{x:281,y:122});
+        initSimpleMount('view-daily','dvFrame2','dvClip2','dvCrop2','https://moligod.com/secrets/',1124,620,{x:281,y:380});
+      })();
+    </script>
+  </section>
+
+  <!-- ============ 子弹实时行情 ============ -->
+  <section class="view" id="view-ammo" role="tabpanel">
+    <div class="mount-card">
+      <div class="mount-head">
+        <div class="mount-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          子弹实时行情
+        </div>
+        <div class="mount-ctrl">
+          <button class="mount-btn" type="button" data-act="zoomout">-</button>
+          <input class="mount-zoom mount-zoom-input" id="ammoZoom" type="number" value="100" min="20" max="300" step="5" inputmode="numeric"><span class="mount-zoom-pct">%</span>
+          <button class="mount-btn" type="button" data-act="zoomin">+</button>
+          <button class="mount-btn" type="button" data-act="fit">适应宽度</button>
+          <button class="mount-btn" type="button" data-act="refresh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            刷新同步
+          </button>
+        </div>
+      </div>
+      <div class="mount-crop" id="ammoCrop">
+        <div class="mount-clip" id="ammoClip">
+          <iframe id="ammoFrame" title="moligod 子弹实时行情实时挂载" referrerpolicy="no-referrer" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <script>(function(){ initMount('view-ammo','ammoFrame','ammoClip','ammoCrop',{src:'https://moligod.com/ammo-realtime',crop:{x:256,y:90,w:1184,h:810}}); })();</script>
+  </section>
+
+  <!-- ============ 鱼类图鉴 ============ -->
+  <section class="view" id="view-fish" role="tabpanel">
+    <div class="mount-card">
+      <div class="mount-head">
+        <div class="mount-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16c0-4.4 3.6-9 8-9s8 4.6 8 9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><path d="M10 7V5a2 2 0 0 1 4 0v2"/><path d="M2 16h4"/></svg>
+          鱼类图鉴
+        </div>
+        <div class="mount-ctrl">
+          <button class="mount-btn" type="button" data-act="zoomout">-</button>
+          <input class="mount-zoom mount-zoom-input" id="fishZoom" type="number" value="100" min="20" max="300" step="5" inputmode="numeric"><span class="mount-zoom-pct">%</span>
+          <button class="mount-btn" type="button" data-act="zoomin">+</button>
+          <button class="mount-btn" type="button" data-act="fit">适应宽度</button>
+          <button class="mount-btn" type="button" data-act="refresh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            刷新同步
+          </button>
+        </div>
+      </div>
+      <div class="mount-crop" id="fishCrop">
+        <div class="mount-clip" id="fishClip">
+          <iframe id="fishFrame" title="moligod 鱼类图鉴实时挂载" referrerpolicy="no-referrer" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <script>(function(){ initMount('view-fish','fishFrame','fishClip','fishCrop',{src:'https://moligod.com/fishing-compendium',crop:{x:256,y:90,w:1184,h:810}}); })();</script>
+  </section>
+
+  <!-- ============ 卡战备套装 ============ -->
+  <section class="view" id="view-gear" role="tabpanel">
+    <div class="mount-card">
+      <div class="mount-head">
+        <div class="mount-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/><path d="M12 8v8M8 12h8"/></svg>
+          卡战备套装
+        </div>
+        <div class="mount-ctrl">
+          <button class="mount-btn" type="button" data-act="zoomout">-</button>
+          <input class="mount-zoom mount-zoom-input" id="gearZoom" type="number" value="100" min="20" max="300" step="5" inputmode="numeric"><span class="mount-zoom-pct">%</span>
+          <button class="mount-btn" type="button" data-act="zoomin">+</button>
+          <button class="mount-btn" type="button" data-act="fit">适应宽度</button>
+          <button class="mount-btn" type="button" data-act="refresh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+            刷新同步
+          </button>
+        </div>
+      </div>
+      <div class="mount-crop" id="gearCrop">
+        <div class="mount-clip" id="gearClip">
+          <iframe id="gearFrame" title="moligod 卡战备套装实时挂载" referrerpolicy="no-referrer" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <script>(function(){ initMount('view-gear','gearFrame','gearClip','gearCrop',{src:'https://moligod.com/preparedness-loadouts',crop:{x:256,y:90,w:1184,h:810}}); })();</script>
+  </section>
+
+
+<section class="view" id="view-mech" role="tabpanel">
+    <style>
+      #view-mech .mech-hint-card{background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:var(--r-l);padding:18px;box-shadow:var(--sh-2);margin-bottom:14px}
+      #view-mech .mech-hint-card h3{display:flex;align-items:center;gap:8px;font-size:1rem;color:var(--t1);margin-bottom:10px}
+      #view-mech .mech-hint-card h3 svg{width:18px;height:18px;color:var(--brand);flex-shrink:0}
+      #view-mech .mech-hint-card p{font-size:.82rem;color:var(--t2);line-height:1.85;margin-bottom:10px}
+      #view-mech .mech-hint-card ul{list-style:none;display:grid;gap:8px;margin:10px 0 14px}
+      #view-mech .mech-hint-card li{font-size:.8rem;color:var(--t2);line-height:1.7;display:flex;gap:8px;align-items:flex-start}
+      #view-mech .mech-hint-card li svg{width:15px;height:15px;color:var(--brand);flex-shrink:0;margin-top:3px}
+      #view-mech .mech-hint-card .src{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px;padding:10px 12px;border:1px dashed var(--line2);border-radius:var(--r-m);background:rgba(15,24,35,.5)}
+      #view-mech .mech-hint-card .src code{font-family:var(--mono);font-size:.78rem;color:var(--info)}
+      #view-mech .mech-hint-card .disc{font-size:.74rem;color:var(--t4);line-height:1.7;margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+      #view-mech .mech-hint-card .warn{display:flex;align-items:flex-start;gap:8px;font-size:.76rem;color:var(--t3);line-height:1.7;background:rgba(255,159,67,.08);border:1px dashed rgba(255,159,67,.35);border-radius:var(--r-m);padding:10px 12px}
+      #view-mech .mech-hint-card .warn svg{width:15px;height:15px;color:var(--warn);flex-shrink:0;margin-top:2px}
+    </style>
+
+    <div class="mech-hint-card">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        改枪码库 · 使用说明
+      </h3>
+      <p>改枪码库内置 <b>461 条完整方案</b>，覆盖全部 67 把武器，热门枪械另附多套配装，<b>不做任何删减</b>。每条方案的备注已清除旧版来源标注，仅保留纯净改枪码与可选说明；你自己的方案可通过「快速添加 / 新增方案」入库，所有新增、编辑、删除均保存在本机。分类上，战斗步枪已并入突击步枪（共 24 把），与游戏内口径保持一致。游戏内导入路径：<b>军械库 → 改装方案 → 导入方案 → 粘贴改枪码</b>。</p>
+    </div>
+
+    <div class="mech-hint-card">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17c4-7 7-10 9-10s5 3 9 10M12 7v10M5 21h14"/></svg>
+        黑潮爆破 · 配置说明
+      </h3>
+      <p>黑潮爆破是 S11 新增的 <b>5v5 回合制爆破玩法</b>，核心机制为「爆改武器 / 爆装备」。本页的<b>模式配置与热门配装</b>整理自抖音、哔哩哔哩社区实测与主流攻略站，于 2026-08 完成口径复核，已<b>离线固化、纯本地运行</b>，不联网读取任何数据。原内置的旧改枪码与全套配装代码已按需移除；资料库中未公开改枪码的方案，可参照配件思路自行组装，亦可通过下方「快速添加 / 新增方案」入库，全部改动保存在本机 localStorage。游戏内导入路径：<b>军械库 → 改装方案 → 导入方案 → 粘贴改枪码</b>。</p>
+    </div>
+
+    <div class="mech-hint-card">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        挂载说明 · 零抓取窗口
+      </h3>
+      <p>本系统通过浏览器原生 <code>&lt;iframe&gt;</code> 实时嵌入 moligod 对应页面，并以 CSS 视口裁剪只保留主内容区域——<b>不读取、不缓存、不抓取</b>任何价格、密码、成交、图鉴或战备数据，所有内容随源站发布自动同步。</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>零数据抓取</b>：不调用任何接口、不解析页面源码，仅做浏览器级窗口挂载，内容完全由源站渲染。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>实时同步</b>：iframe 内容随源站即时更新；点击「刷新同步」可强制重载当前挂载页。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>可滑动 · 可缩放</b>：挂载窗口支持自定义缩放（20%–300%）与滚动查看，二级详情浮窗不再被边框裁切遮挡。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>归属与声明</b>：数据版权归 moligod · 三角洲行动攻略 Wiki 数据站所有；本页为非官方、非商业的便捷入口，与源站及游戏厂商无隶属关系。</span></li>
+      </ul>
+      <div class="src">
+        <span style="font-size:.78rem;color:var(--t3)">数据源</span>
+        <code>https://moligod.com</code>
+      </div>
+      <p class="disc">如涉及版权或下架需求，请联系源站处理。本挂载为只读嵌入，不对源站内容做任何修改或转发。</p>
+    </div>
+
+    <div class="mech-hint-card">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+        v8.4 更新日志
+      </h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>缩放自定义输入</b>：挂载窗口缩放不再仅依赖 +/- 按钮，新增可直接输入百分比（20%–300%、步进 5%）的输入框，聚焦即生效，缩放更精准。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>数据分析占位符清空</b>：移除表单中「如 1.00」等示例文案，输入框默认留空，录入更清爽、不再产生误导。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>机制与提示文案重写</b>：本页签全部说明重写，语句更通顺、口径更严谨，挂载说明、改枪码、黑潮爆破与功能总览一站式可读。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>纯窗口挂载不变</b>：依旧仅用 iframe 嵌入 moligod，零抓取、零解析、零缓存；刷新同步保持有效，源站更新即时呈现。</span></li>
+      </ul>
+    </div>
+
+    <div class="mech-hint-card feat">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 7v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg>
+        优质功能 · 为什么好用
+      </h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>零抓取·绝对安全</b>：只做浏览器级窗口挂载，不调用任何接口、不解析源码、不落地任何价格 / 密码 / 图鉴数据，全部随源站实时更新。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>五大实时挂载</b>：交易行、每日密码 + 位置图、子弹实时行情、鱼类图鉴、卡战备套装同页签分区挂载，点「刷新同步」即可与源站对账。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>智能裁剪·详情完整</b>：自动聚焦内容区、裁掉左侧导航与顶部广告，点开物品详情浮窗不再被顶 / 底遮挡，移动端同样清晰。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>社区推测引擎</b>：内置黑屋匹配触发面、爆率画像与「均衡标签」最优区间，改枪码库与黑潮爆破提示同步内置，可直接套用。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>单文件·可部署</b>：整个系统是一个自包含 HTML，复制即走，可直接发布到 GitHub Pages，无需后端与任何依赖。</span></li>
+      </ul>
+    </div>
+
     <div class="card">
       <div class="card-hd">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg></span>
@@ -1675,14 +2106,14 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
         <div class="hd-tip">以下 8 条是社区归纳的触发面，模型中的每个因子都能对应回其中至少一条。</div>
       </div>
       <div class="mech">
-        <div class="mech-item"><strong>① 搜·打·撤三维偏离：</strong>近期「搜、打、撤」三项数据<strong>全部</strong>显著高于或<strong>全部</strong>显著低于赛季平均水平，即极易触发。赚损比、战损比、撤离率、爆头率短期大幅波动同样记录在案。</div>
-        <div class="mech-item"><strong>② 工资池超标（收益效率）：</strong>系统按每小时哈夫币产出设定基准，社区实测约 <strong>300 万/小时</strong>为中枢，带出期望合理区间 <strong>400–600 万/小时</strong>，每 3 小时刷新一次。长期高于基准 → 压爆率 + 抬强度；长期低于基准 → 触发补偿局。</div>
-        <div class="mech-item"><strong>③ 每日收益额度触顶：</strong>普通号 <strong>800 万</strong>、高活跃号 <strong>1100 万</strong>、新手号 <strong>500 万</strong>。达额后红/金等高价值物资爆率<strong>骤降 70%–90%</strong>，额度每日凌晨 5 点重置，离线每小时恢复 5%。</div>
-        <div class="mech-item"><strong>④ 对局标签分池（S10 引入）：</strong>系统按近十局数据打「猛攻攻坚 / 潜行跑刀 / 稳健均衡 / 消极」标签并同标签分池。猛攻型保险箱与高级容器爆率<strong>上调</strong>，潜行搜刮型大红基础爆率<strong>下调 20%–40%</strong>。</div>
-        <div class="mech-item"><strong>⑤ 检测局（三连撤/速死）：</strong>连续 <strong>3 局成功撤离</strong>，或 <strong>11 分钟内连续 2 局速死</strong>，强制进入检测局测试真实水平，撤离后近期隐藏分即时更新。</div>
-        <div class="mech-item"><strong>⑥ 消极行为：</strong>连续 3 局存活 &lt;10 分钟、频繁放弃对局、自雷、挂机、全程零击杀苟躲、频繁死于人机、只摸保险不搜图。<strong>S6 后老套路反噬</strong>——空装送头、消极养号不再提升爆率，反而判入黑屋（解除需连续 15 局每局存活 ≥30 分钟且累计 10 次撤离）。</div>
-        <div class="mech-item"><strong>⑦ 战备与连坐：</strong>入场装备分是分房第一筛选门槛，双 20 万+ 高价主武器强制划入满装高强度局；组排按<strong>队内最高</strong>隐藏分/ KD 匹配（不取平均），三排全局爆率另降 18%。S8 起观察期账号禁组队、仅匹配同期观察玩家。</div>
-        <div class="mech-item g"><strong>⑧ 赛季再定向（S11）：</strong>2026-09-04（国际服 09-08）起匹配改为「更精准匹配同段位、同场均表现」。「隐藏分每赛季重置为上赛季 60%、前五局承担约 70% 初始校准」在公开资料中未找到官方出处，本工具将其作为赛季初模型参数而非官方事实；赛季初判定参考价值通常高于赛季末，工具按所选赛季阶段联动事件系数与阈值宽严。</div>
+        <div class="mech-item"><strong>① 搜·打·撤三维偏离：</strong>近期「搜、打、撤」三项数据<strong>全部</strong>显著高于、或<strong>全部</strong>显著低于赛季均值时，极易触发调控。赚损比、战损比、撤离率、爆头率等指标的短期剧烈波动，同样会被系统记入。</div>
+        <div class="mech-item"><strong>② 工资池超标（收益效率）：</strong>系统以每小时哈夫币产出为基准，社区实测中枢约 <strong>300 万/小时</strong>，带出期望合理区间为 <strong>400–600 万/小时</strong>，每 3 小时刷新一次。长期高于基准 → 压低爆率并抬升强度；长期低于基准 → 触发补偿局。</div>
+        <div class="mech-item"><strong>③ 每日收益额度触顶：</strong>普通号 <strong>800 万</strong>、高活跃号 <strong>1100 万</strong>、新手号 <strong>500 万</strong>。达额后红 / 金等高价值物资爆率<strong>骤降 70%–90%</strong>；额度每日凌晨 5 点重置，离线期间每小时恢复 5%。</div>
+        <div class="mech-item"><strong>④ 对局标签分池（S10 引入）：</strong>系统依据近十局表现打上「猛攻攻坚 / 潜行跑刀 / 稳健均衡 / 消极」标签，并按同标签分池。猛攻型的保险箱与高级容器爆率<strong>上调</strong>，潜行搜刮型的大红基础爆率<strong>下调 20%–40%</strong>。</div>
+        <div class="mech-item"><strong>⑤ 检测局（三连撤 / 速死）：</strong>连续 <strong>3 局成功撤离</strong>，或 <strong>11 分钟内连续 2 局速死</strong>，将强制进入检测局以核验真实水平；撤离后，近期隐藏分即时更新。</div>
+        <div class="mech-item"><strong>⑥ 消极行为：</strong>连续 3 局存活 &lt;10 分钟、频繁放弃对局、自雷、挂机、全程零击杀苟躲、频繁死于人机、只摸保险不搜图等，均属消极。<strong>S6 之后老套路反噬</strong>——空装送头、消极养号不再提升爆率，反而判入黑屋（解除需连续 15 局每局存活 ≥30 分钟且累计撤离 10 次）。</div>
+        <div class="mech-item"><strong>⑦ 战备与连坐：</strong>入场装备分是分房的第一道筛选门槛，双 <strong>20 万+</strong> 高价主武器会被强制划入满装高强度局；组排按<strong>队内最高</strong>隐藏分 / KD 匹配（不取平均），三排全局爆率另降 18%。S8 起，观察期账号禁止组队，仅匹配同期观察玩家。</div>
+        <div class="mech-item g"><strong>⑧ 赛季再定向（S11）：</strong>2026-09-04（国际服 09-08）起，匹配改为「更精准匹配同段位、同场均表现」。其中「隐藏分每赛季重置为上赛季 60%、前五局承担约 70% 初始校准」在公开资料中尚无官方出处，本工具将其作为赛季初模型参数而非官方事实；赛季初判定参考价值通常高于赛季末，工具会按所选赛季阶段联动事件系数与阈值宽严。</div>
       </div>
     </div>
 
@@ -1699,7 +2130,7 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
     <div class="card">
       <div class="card-hd">
         <span class="ic gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg></span>
-        <h2>v7.7 建模口径与已知局限</h2>
+        <h2>v8.4 建模口径与已知局限</h2>
       </div>
       <div class="mech" id="mechLimits"></div>
     </div>
@@ -1716,10 +2147,6 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
   </section>
 
   <section class="view" id="view-guncode" role="tabpanel">
-    <div class="notice info" style="margin-top:14px">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
-      <b>v7.7 更新（改枪码库恢复 / 方案说明清理 / 更新说明收敛）</b>：① <b>改枪码库恢复为 461 条（完整全集）</b>：撤销上一轮误执行的「精简」，保留全部原抓取方案，67 把枪全覆盖、热门枪多套方案，<b>未删除任何改枪码</b>。② <b>方案说明清理</b>：将各改枪码「方案说明（可选）」里原带的「g.aitags 热门」来源标注整段清除（置空），<b>仅清理备注文本，不改动任何改枪码</b>；本机已保存的存量条目于下次载入时自动清理。③ <b>分类保留</b>：战斗步枪并入突击步枪（24 把）维持不变。④ <b>更新说明收敛</b>：自本版起，更新介绍仅保留最新一版，不再堆叠历史版本；后续内容更新自动迭代至下一版本号（v7.7 → v7.8 → …）。
-    </div>
     <!-- 快速添加（自动归类） -->
     <div class="card gc-quick" style="margin-top:14px">
       <div class="card-hd">
@@ -1895,10 +2322,6 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
 
   <!-- ============ 黑潮爆破模式 ============ -->
   <section class="view" id="view-blacktide" role="tabpanel">
-    <div class="notice info">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      黑潮爆破为 S11 新增 <b>5v5 回合制爆破玩法</b>（核心为「爆改武器 / 爆装备」机制）。本页<b>模式配置与热门配装方案</b>整理自<b>抖音 / 哔哩哔哩社区实测与主流攻略站</b>（2026-08 口径复核），已<b>离线固化、纯本地不联网</b>。原内置的旧改枪码与全套配装代码已按需<b>全部移除</b>；新方案库中未公开改枪码的方案按配件思路自行组装即可，你自己的码可通过下方「快速添加」或「新增方案」入库，新增 / 编辑 / 删除均保存在本机 localStorage。游戏内导入：<b>军械库 → 改装方案 → 导入方案 → 粘贴改枪码</b>。
-    </div>
 
     <div class="card">
       <div class="card-hd">
@@ -2108,7 +2531,7 @@ select.ctrl option{background:#0b111f;color:var(--t1)}
 /* ============================================================
    SECTION: analysis engine v6 (纯逻辑，无 DOM 依赖，可单独测试)
    ------------------------------------------------------------
-   三角洲行动 · 黑屋匹配推测引擎 v4.3 / 系统 v7.7
+   三角洲行动 · 黑屋匹配推测引擎 v4.3 / 系统 v8.4
    在 v4.1（两轴分离）之上的方法论改动：
      1. 五维默认 50 视为「未标定」，不参与评分（v4.1 会把默认值当真实数据）
      2. 输入覆盖率改为按轴权重加权计算，缺失关键项的惩罚更贴近实际影响
@@ -3094,7 +3517,7 @@ var Analyzer = (function(){
     return { risks: risks, tips: tips };
   }
 
-  /* 来源表（供「机制与来源」页渲染） */
+  /* 来源表（供「机制与提示」页渲染） */
   var SOURCES = [
     { tone:'', name:'基础爆率与上限', text:'普通红品 0.08%／金品 1.2%；机密 0.35%／3.8%；绝密 0.80%／7.5%。单局红品硬上限 3.2%、金品 12%，三模式爆率池与额度完全隔离。', src:'社区拆解整理《三角洲行动爆率底层逻辑》《爆率判定机制》2026-07' },
     { tone:'', name:'爆率五系数权重', text:'账号基础 40%／当局表现 35%／战损补偿 15%／收益额度 7%／特殊事件 3%。F_base 由长期 KD（0.3）、赚损比（0.3）、撤离率（0.2）、活跃天数（0.1）、赛季任务完成度（0.1）加权。本工具四份独立条目（2026-04-12、07-05、07-15、07 版）数值完全一致，视为该口径稳定。', src:'社区拆解整理《动态爆率机制说明》《爆率判定机制》《账号爆率机制》' },
